@@ -96,26 +96,29 @@
             </p>
 </section>
         <section id="tts" class="tts">
-            <h2>Pocket TTS</h2>
-            <p>
-                読み上げたい作品を選択してください。
-            </p>
-            <select id="gameSelect">
-                <option value="mh1">
-                    モンスターハンター
-                </option>
-                <option value="mhg">
-                    モンスターハンターG
-                </option>
-            </select>
-            <br><br>
-            <button onclick="speakGame()">
-                紹介を読み上げる
-            </button>
-            <button onclick="stopSpeech()">
-                読み上げ停止
-            </button>
-        </section>
+    <h2>Pocket TTS</h2>
+    <p>
+        読み上げたい内容を選択してください。
+    </p>
+    <select id="gameSelect">
+        <option value="mh1">
+            モンスターハンター
+        </option>
+        <option value="mhg">
+            モンスターハンターG
+        </option>
+    </select>
+    <br><br>
+    <button onclick="speakGame()">
+        作品紹介を読み上げる
+    </button>
+    <button onclick="speakSeries()">
+        シリーズ紹介を読み上げる
+    </button>
+    <button onclick="stopSpeech()">
+        読み上げ停止
+    </button>
+</section>
 </main>
 <script src="script.js"></script>
 </body>
