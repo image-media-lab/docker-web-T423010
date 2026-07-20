@@ -58,22 +58,50 @@
         </p>
     </div>
 </section>
+        <section id="games" class="games">
+
+    <h2>歴代作品一覧</h2>
+
+    <div class="game-grid">
+
+        <!-- モンスターハンター -->
+        <article class="card">
+
+            <img src="images/mh1.jpg" alt="モンスターハンター">
+
+            <h3>モンスターハンター</h3>
+
+            <p><strong>発売日</strong><br>
+            2004年3月11日</p>
+
+            <p><strong>対応機種</strong><br>
+            PlayStation 2</p>
+
+            <a href="#">詳細を見る</a>
+
+        </article>
+
+        <!-- モンスターハンターG -->
+        <article class="card">
+
+            <img src="images/mhg.jpg" alt="モンスターハンターG">
+
+            <h3>モンスターハンターG</h3>
+
+            <p><strong>発売日</strong><br>
+            2005年1月20日</p>
+
+            <p><strong>対応機種</strong><br>
+            PlayStation 2</p>
+
+            <a href="#">詳細を見る</a>
+
+        </article>
+
+    </div>
+
+</section>
 </main>
 
-    <script>
-        // ボタンを押すと犬の画像を取得する関数
-        async function fetchDog() {
-            try {
-                const response = await fetch('https://dog.ceo/api/breeds/image/random');
-                const data = await response.json();
-                document.getElementById('dog-img').src = data.message;
-            } catch (error) {
-                console.error("データの取得に失敗しました:", error);
-            }
-        }
-
-        document.getElementById('update-btn').addEventListener('click', fetchDog);
-        fetchDog(); // 初回起動時にも実行
-    </script>
 </body>
 </html>
