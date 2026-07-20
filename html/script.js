@@ -54,3 +54,119 @@ function speakSeries(){
 function stopSpeech(){
     speechSynthesis.cancel();
 }
+//==================================================
+// 発売年クイズデータ
+//==================================================
+const quizData = [
+    {
+        question:
+            "2004年に発売された作品はどちらでしょう。",
+        answer:
+            "mh1"
+    },
+    {
+        question:
+            "2005年に発売された作品はどちらでしょう。",
+        answer:
+            "mhg"
+    }
+];
+//==================================================
+// 現在の問題番号
+//==================================================
+let currentQuiz = 0;
+//==================================================
+// クイズ開始
+//==================================================
+function startQuiz(){
+    // 読み上げ停止
+    speechSynthesis.cancel();
+    // ランダムに問題を選ぶ
+    currentQuiz =
+        Math.floor(
+            Math.random() * quizData.length
+        );
+    // 問題表示
+    document.getElementById(
+        "quizQuestion"
+    ).textContent =
+        quizData[currentQuiz].question;
+    // 結果表示を初期化
+    document.getElementById(
+        "quizResult"
+    ).textContent = "";
+    // ラジオボタンをリセット
+    const radios =
+        document.getElementsByName(
+            "quizAnswer"
+        );
+    radios.forEach(function(radio){
+
+        radio.checked = false;
+    });
+    // 音声読み上げ
+    const speech =
+        new SpeechSynthesisUtterance(
+            "問題です。" +
+            quizData[currentQuiz].question
+        );
+    speech.lang = "ja-JP";
+    speech.rate = 1.0;
+    speech.volume = 1.0;
+    speechSynthesis.speak(speech);
+}
+//==================================================
+// クイズ回答
+//==================================================
+function checkQuiz(){
+    // 選択された回答
+    const answer =
+        document.querySelector(
+            'input[name="quizAnswer"]:checked'
+        );
+    // 未選択
+    if(answer == null){
+        alert(
+            "作品を選択してください。"
+        );
+        return;
+    }
+    let message;
+
+    // 正解判定
+    if(
+        answer.value ==
+        quizData[currentQuiz].answer
+    ){
+        message =
+            "正解です！";
+    }
+    else{
+        if(
+            quizData[currentQuiz].answer ==
+            "mh1"
+        ){
+            message =
+            "不正解です。正解はモンスターハンターです。";
+        }
+        else{
+            message =
+            "不正解です。正解はモンスターハンターGです。";
+        }
+    }
+    // 結果表示
+    document.getElementById(
+        "quizResult"
+    ).textContent =
+        message;
+    // 読み上げ
+    speechSynthesis.cancel();
+    const speech =
+        new SpeechSynthesisUtterance(
+            message
+        );
+    speech.lang = "ja-JP";
+    speech.rate = 1.0;
+    speech.volume = 1.0;
+    speechSynthesis.speak(speech);
+}
