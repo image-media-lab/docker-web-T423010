@@ -10,20 +10,27 @@
     <header>
         <h1>Monster Hunter Series Wiki</h1>
         <nav>
-
             <a href="#about">シリーズ紹介</a>
-
             <a href="#games">作品一覧</a>
-
             <a href="#tts">Pocket TTS</a>
-
             <a href="#notice">注意事項</a>
-
         </nav>
     </header>
 
     <main>
     <section class="hero">
+        <div class="hero-content">
+             <h2>Monster Hunter Series Wiki</h2>
+                <p>
+                    歴代モンスターハンターシリーズの作品情報、
+                    モンスター、武器、ゲームシステムを紹介する
+                    非公式ファンWikiです。
+                </p>
+            <a href="#games" class="button">
+                    作品一覧を見る
+                </a>
+            </div>
+        </section>
        <section id="about" class="about">
     <h2>シリーズ紹介</h2>
     <div class="about-content">
@@ -59,53 +66,57 @@
     </div>
 </section>
         <section id="games" class="games">
-
     <h2>歴代作品一覧</h2>
-
     <div class="game-grid">
-
-        <!-- モンスターハンター -->
         <article class="card">
-
             <img src="images/mh1.jpg" alt="モンスターハンター">
-
             <h3>モンスターハンター</h3>
-
             <p><strong>発売日</strong><br>
             2004年3月11日</p>
-
             <p><strong>対応機種</strong><br>
             PlayStation 2</p>
-
             <a href="https://www.capcom-games.com/product/ja-jp/monsterhunter/" target="_blank">
             詳細を見る↗
             </a>
-
         </article>
-
-        <!-- モンスターハンターG -->
         <article class="card">
-
             <img src="images/mhg.jpg" alt="モンスターハンターG">
-
             <h3>モンスターハンターG</h3>
-
             <p><strong>発売日</strong><br>
             2005年1月20日</p>
-
             <p><strong>対応機種</strong><br>
             PlayStation 2</p>
-
             <a href="https://www.capcom-games.com/product/ja-jp/monsterhunterg/" target="_blank">
             詳細を見る↗
             </a>
-
         </article>
-
     </div>
-
+            <p class="link-notice">
+                ※「詳細を見る」はCAPCOM公式サイトを新しいタブで開きます。
+            </p>
 </section>
+        <section id="tts" class="tts">
+            <h2>Pocket TTS</h2>
+            <p>
+                読み上げたい作品を選択してください。
+            </p>
+            <select id="gameSelect">
+                <option value="mh1">
+                    モンスターハンター
+                </option>
+                <option value="mhg">
+                    モンスターハンターG
+                </option>
+            </select>
+            <br><br>
+            <button onclick="speakGame()">
+                紹介を読み上げる
+            </button>
+            <button onclick="stopSpeech()">
+                読み上げ停止
+            </button>
+        </section>
 </main>
-
+<script src="script.js"></script>
 </body>
 </html>
