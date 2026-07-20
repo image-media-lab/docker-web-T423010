@@ -172,3 +172,10 @@ nav a:hover{
         grid-template-columns:1fr;
     }
 }
+
+.link-notice{
+    margin-top:20px;
+    text-align:center;
+    color:#bbbbbb;
+    font-size:14px;
+}
