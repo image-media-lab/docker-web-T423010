@@ -118,6 +118,35 @@
     <button onclick="stopSpeech()">
         読み上げ停止
     </button>
+            <hr>
+<h3>発売年クイズ</h3>
+<p id="quizQuestion">
+    ボタンを押してクイズを開始してください。
+</p>
+<button onclick="startQuiz()">
+    クイズ開始
+</button>
+<br><br>
+<label>
+    <input
+        type="radio"
+        name="quizAnswer"
+        value="mh1">
+    モンスターハンター
+</label>
+<br>
+<label>
+    <input
+        type="radio"
+        name="quizAnswer"
+        value="mhg">
+    モンスターハンターG
+</label>
+<br><br>
+<button onclick="checkQuiz()">
+    回答する
+</button>
+<p id="quizResult"></p>
 </section>
 </main>
 <script src="script.js"></script>
